@@ -1,6 +1,5 @@
 import express from "express";
 import { Client } from "@line/bot-sdk";
-import got from "got";
 import fetch from "node-fetch";
 
 const router = express.Router();
