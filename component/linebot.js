@@ -31,7 +31,7 @@ async function handleEvent(event) {
         console.log("groupId:" + groupId, "userId:" + userId, "msgType: " + msgType, "displayName:\n" + profile.displayName + ":\n" + msg);
 
         if (groupId === "C897b733b2f8abfe9938136290efdf860") {
-          chetGPT(event);
+          chatGPT(event);
         }
       } catch (error) {
         console.log(error);
@@ -39,7 +39,7 @@ async function handleEvent(event) {
     } else {
       try {
         if (msgType === "text" && config.lineIds.whiteList.includes(userId)) {
-          chetGPT(event);
+          chatGPT(event);
         }
       } catch (error) {
         console.log(error);
@@ -50,7 +50,7 @@ async function handleEvent(event) {
   }
 }
 
-async function chetGPT(event) {
+async function chatGPT(event) {
   try {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
